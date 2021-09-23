@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ProductList :products="products"/>
+    <ProductList @delete:product="deleteProduct" :products="products" />
   </div>
 </template>
 
@@ -44,6 +44,11 @@ export default {
       ],
     };
   },
+  methods:{
+    deleteProduct(product){
+      this.products = this.products.filter(x=>x.id !== product.id)
+    }
+  }
 };
 </script>
 
