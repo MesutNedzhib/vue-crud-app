@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <ProductList @delete:product="deleteProduct" :products="products" />
+    <ProductAdd @add:product="addProduct"/>
+    <ProductList @delete:product="deleteProduct" @update:product="updateProduct" :products="products" />
   </div>
 </template>
 
@@ -8,11 +9,13 @@
 
 <script>
 import ProductList from "./components/ProductList.vue";
+import ProductAdd from './components/ProductAdd.vue';
 
 export default {
   name: "App",
   components: {
     ProductList,
+    ProductAdd
   },
   data() {
     return {
@@ -47,6 +50,13 @@ export default {
   methods:{
     deleteProduct(product){
       this.products = this.products.filter(x=>x.id !== product.id)
+    },
+    updateProduct(){
+      
+    },
+    addProduct(product){
+      const newProduct = {...product} // create new ref in memory
+      this.products = [...this.products,newProduct]
     }
   }
 };
@@ -59,7 +69,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
