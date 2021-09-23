@@ -52,7 +52,7 @@ export default {
       this.products = this.products.filter(x=>x.id !== product.id)
     },
     updateProduct(){
-      
+      // api
     },
     addProduct(product){
       const newProduct = {...product} // create new ref in memory
