@@ -55,7 +55,6 @@ export default {
       this.products = this.products.map((product) =>
         product.id === updatedProduct.id ? updatedProduct : product
       );
-      console.log(this.products);
     },
     async addProduct(product) {
       const result = await fetch("http://localhost:3000/products", {
