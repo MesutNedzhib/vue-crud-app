@@ -52,9 +52,10 @@ export default {
 
       const updatedProduct = await result.json();
 
-      this.products = this.products.map((item) => {
-        item.id === product.id ? updatedProduct : product;
-      });
+      this.products = this.products.map((product) =>
+        product.id === updatedProduct.id ? updatedProduct : product
+      );
+      console.log(this.products);
     },
     async addProduct(product) {
       const result = await fetch("http://localhost:3000/products", {
