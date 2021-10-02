@@ -34,14 +34,27 @@ export default {
       this.products = data;
     },
     async deleteProduct(product) {
-      await fetch("http://localhost:3000/products/"+product.id,{
-        method: "DELETE"
-      })
+      await fetch("http://localhost:3000/products/" + product.id, {
+        method: "DELETE",
+      });
 
       this.products = this.products.filter((x) => x.id !== product.id);
     },
-    async updateProduct() {
-      // api
+    async updateProduct(product) {
+      const result = await fetch(
+        "http://localhost:3000/products/" + product.id,
+        {
+          method: "PUT",
+          body: JSON.stringify(product),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      const updatedProduct = await result.json();
+
+      this.products = this.products.map((item) => {
+        item.id === product.id ? updatedProduct : product;
+      });
     },
     async addProduct(product) {
       const result = await fetch("http://localhost:3000/products", {
