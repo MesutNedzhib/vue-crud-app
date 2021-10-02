@@ -1,0 +1,59 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "productName": "Phone",
+      "quantityPerUnit": "Iphone X",
+      "unitPrice": 1199.99,
+      "unitsInStock": 2
+    },
+    {
+      "id": 2,
+      "categoryId": 2,
+      "productName": "Phone",
+      "quantityPerUnit": "Xiaomi Note 10",
+      "unitPrice": 299.99,
+      "unitsInStock": 5
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "productName": "Phone",
+      "quantityPerUnit": "Iphone XIII",
+      "unitPrice": 1799.99,
+      "unitsInStock": 3
+    },
+    {
+      "id": 4,
+      "categoryId": 2,
+      "productName": "Phone",
+      "quantityPerUnit": "Xiaomi Pocket",
+      "unitPrice": 269.99,
+      "unitsInStock": 3
+    },
+    {
+      "id": 5,
+      "categoryId": 3,
+      "productName": "Phone",
+      "quantityPerUnit": "Samsung S10",
+      "unitPrice": 769.99,
+      "unitsInStock": 3
+    }
+  ],
+
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "Iphone"
+    },
+    {
+      "id": 2,
+      "categoryName": "Xiaomi"
+    },
+    {
+      "id": 3,
+      "categoryName": "Samsung"
+    }
+  ]
+}
